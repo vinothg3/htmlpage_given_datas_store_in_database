@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>this accessrecord</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="ne">Name</label>
+            <select name="ne" id="ne" multiple>
+                {% for i in webpage %}
+                <option value="{{i}}">{{i.Name}}</option>
+                {% endfor %}
+            </select>
+            <label for="up">URL</label>
+            <input type="url" name="up" id="up">
+            <input type="submit" value="updating">
+        </form>
+    </center>
+</body>
+</html>
